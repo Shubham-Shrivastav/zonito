@@ -1,13 +1,20 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
 
-function App() {
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Zonito !
-        </p>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+          >
+            <Route index element={<Home />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
