@@ -8,10 +8,10 @@ const Home = () => {
     <Container maxWidth="sm">
       <Box mt={5}>
         <Typography variant="h4" align="center" gutterBottom>
-          Welcome to Our Zonito !
+          Welcome to Zonito !
         </Typography>
         <Typography variant="body1" align="center">
-          Choose form the wide range of products. Start shopping now!
+          Choose from the wide range of products. Start shopping now!
         </Typography>
       </Box>
     </Container>
