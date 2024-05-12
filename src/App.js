@@ -11,7 +11,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div style={{
-        background: 'linear-gradient(135deg, #f1f1f1, #404040)',
+        background: 'black',
         minHeight: '100vh',
       }}>
         <BrowserRouter>
