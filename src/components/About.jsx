@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 
 const About = () => {
     return (
-        <Box p={2}>
+        <Box p={2} color={'aliceblue'}>
             <Typography variant="h4" gutterBottom>About Zonito.in</Typography>
             <Typography variant="body1" paragraph>
                 Zonito.in is your go-to destination for customizable clothing shopping. We believe that fashion is a form of self-expression, and everyone deserves to wear clothing that reflects their unique style and personality.
