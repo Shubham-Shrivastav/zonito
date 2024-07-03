@@ -1,15 +1,8 @@
-import React from 'react';
-import Typography from '@mui/material/Typography';
-
-
 const Cart = () => {
     return (
-        <div>
-            <Typography color={'aliceblue'}>
-                <h1>Cart</h1>
-                <p>Please add the item to cart.</p>
-
-            </Typography>
+        <div className="p-6 text-white">
+            <h1 className="text-4xl mb-4">Cart</h1>
+            <p>Please add items to your cart.</p>
         </div>
     );
 }

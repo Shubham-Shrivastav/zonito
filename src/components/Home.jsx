@@ -1,20 +1,17 @@
 import React from 'react';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
+import Payments from './Payments';
 
 const Home = () => {
   return (
-    <Container maxWidth="sm">
-      <Box mt={5}>
-        <Typography variant="h4" align="center" gutterBottom>
-          Welcome to Zonito !
-        </Typography>
-        <Typography variant="body1" align="center">
-          Choose from the wide range of products. Start shopping now!
-        </Typography>
-      </Box>
-    </Container>
+    <>
+      <div className="max-w-sm mx-auto mt-5">
+        <div className="mt-5 text-center">
+          <h4 className="text-4xl mb-4">Welcome to Zonito!</h4>
+          <p>Choose from the wide range of products. Start shopping now!</p>
+        </div>
+      </div>
+      {/* <Payments /> */}
+    </>
   );
 }
 
