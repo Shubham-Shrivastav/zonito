@@ -1,17 +1,23 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
+import Header from "./pages/Header";
+import Footer from "./pages/Footer";
 import Home from "./components/Home";
-import About from "./components/About";
-import Cart from "./components/Cart";
+import About from "./pages/About";
+import Cart from "./pages/Cart";
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme/theme';
-import './index.css';
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <div className="bg-black min-h-screen text-white">
+      <div style={{
+        background: 'black',
+        minHeight: '100vh',
+        color: 'white',
+        display: 'flex',
+        flexDirection: 'column'
+      }}>
         <BrowserRouter>
           <Header />
           <Routes>
@@ -19,6 +25,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </div>
     </ThemeProvider>
