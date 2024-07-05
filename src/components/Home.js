@@ -3,7 +3,6 @@ import homepage from '../assets/images/mac/HomepageMobile_2500x1000.gif';
 import homepage1 from '../assets/images/mac/Homepage-mockup-desk.gif';
 import TrendingSection from '../pages/Trending';
 import PromptInput from '../pages/PromptInput';
-
 const Home = () => {
   const [design, setDesign] = useState(null);
 

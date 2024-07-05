@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Cart from "./pages/Cart";
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme/theme';
+import Exclusive from './pages/Exclusive';
 
 const App = () => {
   return (
@@ -24,6 +25,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/exclusive" element={<Exclusive />} />
+
           </Routes>
           <Footer />
         </BrowserRouter>
