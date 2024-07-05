@@ -1,33 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { toast } from "sonner";
 
-const Exclusive = () => {
+const Exclusive = ({ addItemToCart }) => {
     const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
                 const response = await axios.get('https://fakestoreapi.com/products');
                 setProducts(response.data);
-                setLoading(false);
             } catch (error) {
-                setError('Error fetching products');
-                setLoading(false);
+                console.error('Error fetching products:', error);
             }
         };
 
         fetchProducts();
     }, []);
 
-    if (loading) {
-        return <div className="text-center mt-8">Loading...</div>;
-    }
+    const handleAddToCart = (product) => {
+        addItemToCart(product);
+        toast.success(`${product.title} added to cart!`);
+    };
 
-    if (error) {
-        return <div className="text-center mt-8 text-red-500">{error}</div>;
-    }
 
     return (
         <div className="py-12 bg-gray-100">
@@ -37,8 +32,13 @@ const Exclusive = () => {
                     <div key={product.id} className="bg-white p-4 rounded-lg shadow-md">
                         <img src={product.image} alt={product.title} className="w-full h-40 object-cover rounded-md mb-4" />
                         <h3 className="text-xl font-semibold">{product.title}</h3>
-                        <p className="text-gray-600 mt-2">{product.description}</p>
-                        <span className="text-lg font-bold">${product.price}</span>
+                        <p className="text-gray-600 mt-2">${product.price}</p>
+                        <button
+                            onClick={() => handleAddToCart(product)}
+                            className="mt-4 bg-sky-500 text-white px-4 py-2 rounded-md shadow-sm hover:bg-sky-600 transition duration-300"
+                        >
+                            Add to Cart
+                        </button>
                     </div>
                 ))}
             </div>
